@@ -57,7 +57,7 @@ const NavigationMenuDemo = () => {
           </NavigationMenuTrigger>
         </NavigationMenu.Item>
         )}
-        {devdebug ? (
+        {devdebug && (
           <NavigationMenu.Item>
             <NavigationMenuTrigger>
               <Button
@@ -86,8 +86,8 @@ const NavigationMenuDemo = () => {
               </List>
             </NavigationMenuContent>
           </NavigationMenu.Item>
-        ) : null}
-        {devdebug ? (
+        )}
+        {devdebug && (
           <NavigationMenu.Item>
             <NavigationMenuTrigger>
               <Button
@@ -136,14 +136,14 @@ const NavigationMenuDemo = () => {
               </List>
             </NavigationMenuContent>
           </NavigationMenu.Item>
-        ) : null}
-        {adminMode ? (
+        )}
+        {adminMode && (
           <NavigationMenu.Item>
             <NavigationMenuTrigger>
               {/* <AdminPanel /> */}
             </NavigationMenuTrigger>
           </NavigationMenu.Item>
-        ) : null}
+        )}
         {billing && storeEnabled ? (
           <NavigationMenu.Item>
             <NavigationMenuTrigger>
