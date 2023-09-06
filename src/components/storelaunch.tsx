@@ -47,10 +47,6 @@ const StoreContent = () => {
   }, [isInView]);
 
 
-
-
-
-
   return (
     <main className={`${styles.main} bg-ldgray relative`}>
       <div className={`absolute top-0 left-0 w-full h-1/6 bg-gradient-to-br ${headerColor}  rounded-md filter blur-3xl opacity-30 z-0`}></div>
