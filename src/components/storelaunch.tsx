@@ -11,12 +11,20 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { once } from "events";
 import { useFlags } from "launchdarkly-react-client-sdk";
 
 const StoreContent = () => {
   const { headerConfig } = useFlags();
+
+  const [headerColor, setHeaderColor] = useState("from-blue-500 to-green-500");
+
+  useEffect(() => {
+    setHeaderColor(headerConfig);
+    console.log("Updating header color to: " + headerConfig)
+  }, [headerConfig]);
+
   const handleScroll = (e: any) => {
     console.log("going");
     e.preventDefault();
@@ -38,9 +46,14 @@ const StoreContent = () => {
     }
   }, [isInView]);
 
+
+
+
+
+
   return (
     <main className={`${styles.main} bg-ldgray relative`}>
-      <div className={`absolute top-0 left-0 w-full h-1/6 bg-gradient-to-br ${headerConfig}  rounded-md filter blur-3xl opacity-30 z-0`}></div>
+      <div className={`absolute top-0 left-0 w-full h-1/6 bg-gradient-to-br ${headerColor}  rounded-md filter blur-3xl opacity-30 z-0`}></div>
       <div
         className={cn(
           "flex text-3xl w-full md:text-6xl lg:text-7xl font-sans text-yellow-500 mx-auto place-items-center place-content-center animate-fade-in z-10",
