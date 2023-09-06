@@ -12,6 +12,19 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'from-red-500',
+    'from-orange-500',
+    'from-blue-500',
+    'from-green-500',
+    'from-purple-500',
+    'to-red-500',
+    'to-orange-500',
+    'to-blue-500',
+    'to-green-500',
+    'to-purple-500',
+    
+  ],
   theme: {
     container: {
       center: true,

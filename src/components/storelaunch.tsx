@@ -21,7 +21,20 @@ const StoreContent = () => {
   const [headerColor, setHeaderColor] = useState("from-blue-500 to-green-500");
 
   useEffect(() => {
-    handleHeaderColor();
+    switch(headerConfig) {
+      case 'blue':
+        setHeaderColor('from-blue-500 to-green-500');
+        break;
+      case 'orange':
+        setHeaderColor('from-orange-500 to-red-500');
+        break;
+      case 'purple':
+        setHeaderColor('from-purple-500 to-blue-500');
+        break;
+      default:
+        console.log('Invalid color');
+    }
+    // handleHeaderColor();
   }, [headerConfig]);
 
   async function handleHeaderColor() {
@@ -54,7 +67,7 @@ const StoreContent = () => {
 
   return (
     <main className={`${styles.main} bg-ldgray relative`}>
-      <div className={`absolute top-0 left-0 w-full h-1/6 bg-gradient-to-br ${headerColor}  rounded-md filter blur-3xl opacity-30 z-0`}></div>
+      <div className={`absolute top-0 left-0 w-full h-1/6 bg-gradient-to-br ${headerColor} rounded-md filter blur-3xl opacity-30 z-0`}></div>
       <div
         className={cn(
           "flex text-3xl w-full md:text-6xl lg:text-7xl font-sans text-yellow-500 mx-auto place-items-center place-content-center animate-fade-in z-10",
