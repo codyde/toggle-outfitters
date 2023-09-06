@@ -21,9 +21,14 @@ const StoreContent = () => {
   const [headerColor, setHeaderColor] = useState("from-blue-500 to-green-500");
 
   useEffect(() => {
-    setHeaderColor(headerConfig);
-    console.log("Updating header color to: " + headerConfig)
+    handleHeaderColor();
   }, [headerConfig]);
+
+  async function handleHeaderColor() {
+    console.log("Updating header color to: " + headerConfig)
+    await setHeaderColor(headerConfig);
+    return headerColor
+  }
 
   const handleScroll = (e: any) => {
     console.log("going");
