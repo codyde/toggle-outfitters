@@ -13,7 +13,7 @@ const QrCode = () => {
             <DialogHeader>
               <DialogTitle className="text-2xl">Toggle Outfitters</DialogTitle>
             </DialogHeader>
-            <img src="/images/qrcode.png" alt="qrcode" className="w-1/2 mx-auto" />
+            <img src="/images/qrcode.png" alt="qrcode" className="w-1/2 2xl:w-1/3 mx-auto" />
           </DialogContent>
         </Dialog>
       );
